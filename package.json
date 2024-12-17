@@ -1,36 +1,36 @@
 {
-  "name": "nextjs-hono-template",
-  "version": "0.0.1",
-  "private": true,
-  "engines": {
-    "pnpm": "9.13.2",
-    "npm": "Please use pnpm!",
-    "yarn": "Please use pnpm!"
-  },
-  "scripts": {
-    "dev": "run-p dev:*",
-    "dev:next": "next dev --turbopack",
-    "dev:hcm": "hcm 'src/**/*.module.{css,scss,sass}' -w",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "next": "15.1.0"
-  },
-  "devDependencies": {
-    "typescript": "5.7.2",
-    "@types/node": "20.16.0",
-    "@types/react": "19.0.1",
-    "@types/react-dom": "19.0.2",
-    "eslint": "9.17.0",
-    "eslint-config-next": "15.1.0",
-    "@eslint/eslintrc": "3.2.0",
-    "happy-css-modules": "3.1.1",
-    "prettier": "3.4.2",
-    "npm-run-all2": "6.2.2"
-  },
-  "packageManager": "pnpm@9.13.2"
+	"name": "nextjs-hono-template",
+	"version": "0.0.1",
+	"private": true,
+	"engines": {
+		"pnpm": "9.13.2",
+		"npm": "Please use pnpm!",
+		"yarn": "Please use pnpm!"
+	},
+	"scripts": {
+		"dev": "run-p dev:*",
+		"dev:next": "next dev --turbopack",
+		"dev:hcm": "hcm 'src/**/*.module.{css,scss,sass}' -w",
+		"build": "next build",
+		"start": "next start",
+		"lint": "biome lint -- apply ./",
+		"format": "biome format ./ --write",
+		"check": "biome check --apply ./"
+	},
+	"dependencies": {
+		"next": "15.1.0",
+		"react": "19.0.0",
+		"react-dom": "19.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/node": "20.16.0",
+		"@types/react": "19.0.1",
+		"@types/react-dom": "19.0.2",
+		"happy-css-modules": "3.1.1",
+		"npm-run-all2": "6.2.2",
+		"prettier": "3.4.2",
+		"typescript": "5.7.2"
+	},
+	"packageManager": "pnpm@9.13.2"
 }
