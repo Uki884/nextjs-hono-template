@@ -15,9 +15,10 @@
 		"start": "next start",
 		"lint": "biome lint -- apply ./",
 		"format": "biome format ./ --write",
-		"check": "biome check --apply ./"
+		"check": "biome check --write ./"
 	},
 	"dependencies": {
+		"hono": "4.6.14",
 		"next": "15.1.0",
 		"react": "19.0.0",
 		"react-dom": "19.0.0"
