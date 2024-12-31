@@ -1,0 +1,26 @@
+{
+	"name": "@app/server",
+	"private": true,
+	"scripts": {
+		"dev": "tsc --watch",
+		"build": "tsc",
+		"prisma:generate": "prisma generate --schema=src/api/lib/prisma/schema.prisma",
+		"prisma:migrate:dev": "prisma migrate dev --schema=src/api/lib/prisma/schema.prisma",
+		"prisma:migrate:prod": "prisma migrate deploy --schema=src/api/lib/prisma/schema.prisma"
+	},
+	"exports": {
+		".": {
+			"import": "./dist/app/index.js",
+			"require": "./dist/app/index.js"
+		}
+	},
+	"dependencies": {
+		"@prisma/client": "6.1.0",
+		"hono": "4.6.14"
+	},
+	"devDependencies": {
+		"@types/node": "20.16.0",
+		"prisma": "6.1.0",
+		"typescript": "5.7.2"
+	}
+}
