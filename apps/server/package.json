@@ -2,6 +2,7 @@
 	"name": "@app/server",
 	"private": true,
 	"scripts": {
+		"prepare": "npm run build",
 		"dev": "tsc --watch",
 		"build": "tsc",
 		"prisma:generate": "prisma generate --schema=src/lib/prisma/schema.prisma",

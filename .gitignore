@@ -47,3 +47,4 @@ next-env.d.ts
 prisma/client
 src/api/lib/prisma/output
 
+.next

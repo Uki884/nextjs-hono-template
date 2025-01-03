@@ -1,5 +1,4 @@
-import { app } from "../../../../../server/src/app";
-import { handle } from "@app/server";
+import { app, handle } from "@app/server";
 
 export const runtime = "edge";
 
