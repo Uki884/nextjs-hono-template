@@ -3,12 +3,18 @@ import { zValidator } from "@hono/zod-validator";
 import { z } from "zod";
 
 export const newRoute = new Hono()
-	.post("/", zValidator(
-		'form',
+  .post("/", zValidator(
+    'json',
     z.object({
       title: z.string(),
       body: z.string(),
     })
-  ), (c) => c.json({ result: "create an example" }, 201))
+  ), (c) => {
+    const { title, body } = c.req.valid('json');
+
+    return c.json({
+      result: "success",
+    });
+  })
 
 
