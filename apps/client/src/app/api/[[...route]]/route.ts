@@ -1,5 +1,5 @@
 import { app } from "../../../../../server/src/app";
-import { handle } from "hono/vercel";
+import { handle } from "@app/server";
 
 export const runtime = "edge";
 

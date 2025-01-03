@@ -6,3 +6,5 @@ export type ApiType = typeof apiRoutes;
 
 export const hcWithType = (...args: Parameters<typeof hc>) =>
   hc<typeof apiRoutes>(...args)
+
+export { handle } from "hono/vercel";
