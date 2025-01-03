@@ -1,4 +1,4 @@
-import { ClientResponse } from "@app/server";
+import { ClientResponse } from "@app/server/types";
 
 export async function fetcher<T>(response: Promise<ClientResponse<T>>) {
   const result = await response;

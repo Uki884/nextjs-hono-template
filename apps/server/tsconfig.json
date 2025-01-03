@@ -15,6 +15,6 @@
     "incremental": true,
     "outDir": "./dist"
   },
-  "include": ["**/*.ts"],
+  "include": ["./src/types.ts"],
   "exclude": ["node_modules", "dist"]
 }

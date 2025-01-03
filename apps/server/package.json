@@ -2,10 +2,14 @@
 	"name": "@app/server",
 	"private": true,
 	"exports": {
+		"./types": {
+			"import": "./dist/types.js",
+			"require": "./dist/types.js",
+			"types": "./dist/types.d.ts"
+		},
 		".": {
-			"import": "./dist/index.js",
-			"require": "./dist/index.js",
-			"types": "./dist/index.d.ts"
+			"import": "./src/index.ts",
+			"require": "./src/index.ts"
 		}
 	},
 	"scripts": {

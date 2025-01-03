@@ -1,5 +1,6 @@
 import { Hono } from "hono";
-import { examples, examples2 } from "./examples";
+import { exampleRoutes } from "./example";
 
 export const app = new Hono().basePath("/api");
-export const apiRoutes = app.route(...examples).route(...examples2);
+
+export const apiRoutes = app.route("/examples", exampleRoutes);
