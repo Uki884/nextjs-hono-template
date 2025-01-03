@@ -1,3 +1,8 @@
-export const ExampleList = () => {
-	return <div>ExampleList</div>;
+import { apiClient } from "@/src/shared/lib/apiClient";
+import { fetcher } from "@/src/shared/lib/fetcher";
+
+export const ExampleList = async () => {
+  const data = await fetcher(apiClient.api.examples.$get());
+
+  return <div>{data.result.hoge}</div>;
 };
