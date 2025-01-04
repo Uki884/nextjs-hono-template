@@ -7,6 +7,11 @@
 			"require": "./dist/types.js",
 			"types": "./dist/types.d.ts"
 		},
+		"./react": {
+			"import": "./dist/react.js",
+			"require": "./dist/react.js",
+			"types": "./dist/react.d.ts"
+		},
 		".": {
 			"import": "./src/index.ts",
 			"require": "./src/index.ts"

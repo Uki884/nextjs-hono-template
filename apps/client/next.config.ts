@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-	transpilePackages: ['@app/server']
+	transpilePackages: ["@app/server"],
 };
 
 export default nextConfig;
