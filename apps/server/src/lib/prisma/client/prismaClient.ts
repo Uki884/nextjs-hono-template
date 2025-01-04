@@ -1,12 +1,12 @@
 import { PrismaClient } from "../output";
 
 const prismaClientSingleton = () => {
-	return new PrismaClient();
+  return new PrismaClient();
 };
 
 // biome-ignore lint:
 declare const globalThis: {
-	prismaGlobal: ReturnType<typeof prismaClientSingleton>;
+  prismaGlobal: ReturnType<typeof prismaClientSingleton>;
 } & typeof global;
 
 const prisma = globalThis.prismaGlobal ?? prismaClientSingleton();
