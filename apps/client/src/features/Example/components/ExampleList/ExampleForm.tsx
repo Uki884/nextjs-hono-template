@@ -10,7 +10,10 @@ export const ExampleForm = () => {
 			<button
 				type="button"
 				onClick={() => {
-					signIn("credentials", { username: "admin", password: "admin" });
+					signIn("credentials", {
+						username: "admin",
+						password: "admin",
+					});
 				}}
 			>
 				Submit
