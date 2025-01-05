@@ -1,6 +1,6 @@
 import { authHandler, verifyAuth } from "@hono/auth-js";
 import { Hono } from "hono";
-import { authMiddleware } from "../middlewares/auth";
+import { authMiddleware } from "../middlewares/auth.middleware";
 import { exampleRoutes } from "./example";
 
 const app = new Hono();
