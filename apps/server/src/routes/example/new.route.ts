@@ -3,7 +3,7 @@ import { Hono } from "hono";
 import { z } from "zod";
 
 export const newRoute = new Hono().post(
-  "/",
+  "",
   zValidator(
     "json",
     z.object({
