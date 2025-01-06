@@ -2,9 +2,10 @@
 
 import { apiClient } from "@/src/shared/lib/apiClient";
 import { signIn } from "@app/server/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { signUpAction } from "../../server/signUpAction";
 
-export const ExampleForm = () => {
+export const AuthForm = () => {
   const [signUpForm, setSignUpForm] = useState({
     name: "",
     email: "",
@@ -13,29 +14,36 @@ export const ExampleForm = () => {
 
   const handleSignUp = async () => {
     const { name, email, password } = signUpForm;
-    const result = await apiClient.api.auth.signUp.$post({
-      json: { name, email, password },
-    });
-    console.log("result", result);
+    const result = await signUpAction({ name, email, password });
+    console.log("handleSignUp result", result);
   };
+
+  const handleSignIn = async () => {
+    const result = await signIn("credentials", {
+      username: "admin",
+      password: "admin",
+    });
+    console.log("handleSignIn result", result);
+  };
+
+  useEffect(() => {
+    apiClient.api.examples.$get().then((data) => {
+      console.log("data", data);
+    });
+  }, []);
 
   return (
     <div>
       <h1>SignIn Form</h1>
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSignIn();
+        }}
+      >
         <input type="email" />
         <input type="password" />
-        <button
-          type="button"
-          onClick={() => {
-            signIn("credentials", {
-              username: "admin",
-              password: "admin",
-            });
-          }}
-        >
-          Submit
-        </button>
+        <button type="submit">Submit</button>
       </form>
       <h1>SignUp Form</h1>
       <form

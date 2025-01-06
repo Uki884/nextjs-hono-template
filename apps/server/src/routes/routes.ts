@@ -5,7 +5,7 @@ import { authMiddleware } from "../middlewares/auth.middleware";
 import { authRoutes } from "./auth";
 import { exampleRoutes } from "./example";
 
-const app = new Hono();
+export const app = new Hono();
 
 const exceptRoutes = ["/api/auth/signUp"];
 
