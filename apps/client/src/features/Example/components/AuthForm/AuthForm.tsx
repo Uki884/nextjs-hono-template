@@ -1,7 +1,7 @@
 "use client";
 
 import { apiClient } from "@/src/shared/lib/apiClient";
-import { signIn } from "@app/server/react";
+import { signIn, signOut } from "@app/server/react";
 import { useEffect, useState } from "react";
 import { signUpAction } from "../../server/signUpAction";
 
@@ -24,6 +24,10 @@ export const AuthForm = () => {
       password: "admin",
     });
     console.log("handleSignIn result", result);
+  };
+
+  const handleSignOut = async () => {
+    await signOut();
   };
 
   useEffect(() => {
@@ -74,6 +78,15 @@ export const AuthForm = () => {
           }
         />
         <button type="submit">Submit</button>
+      </form>
+      <h1>SignOut</h1>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSignOut();
+        }}
+      >
+        <button type="submit">SignOut</button>
       </form>
     </div>
   );
