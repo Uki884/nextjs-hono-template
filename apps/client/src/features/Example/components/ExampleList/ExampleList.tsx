@@ -3,10 +3,10 @@ import { fetcher } from "@/src/shared/lib/fetcher";
 import { ExampleForm } from "./ExampleForm";
 
 export const ExampleList = async () => {
-  const data = await fetcher(apiClient.api.examples.$get());
+  // const data = await fetcher(apiClient.api.examples.$get());
   return (
     <div>
-      {JSON.stringify(data.result)}
+      {/* {JSON.stringify(data.result)} */}
       <ExampleForm />
     </div>
   );

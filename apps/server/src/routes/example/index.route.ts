@@ -1,7 +1,7 @@
 import { Hono } from "hono";
-import { ExampleUsecases } from "../../usecases/example";
+import { exampleIndexUsecase } from "../../usecases/example/index.usecase";
 
 export const indexRoute = new Hono().get("", async (c) => {
-  const result = await ExampleUsecases.index();
+  const result = await exampleIndexUsecase();
   return c.json({ result: result });
 });
