@@ -8,7 +8,8 @@ export const authMiddleware = initAuthConfig((c) => {
   const { AUTH_SECRET } = env<{ AUTH_SECRET: string }>(c);
   return {
     secret: AUTH_SECRET,
-    adapter: PrismaAdapter(prismaClient),
+    // FIXME: エラーが起こるのでコメントアウト。ログイン処理をオーバーライドする必要ありそう
+    // adapter: PrismaAdapter(prismaClient),
     providers: [
       Credentials({
         credentials: {
@@ -24,9 +25,9 @@ export const authMiddleware = initAuthConfig((c) => {
         },
       }),
     ],
-    pages: {
-      signIn: "/signin",
-      error: "/error",
-    },
+    // pages: {
+    //   signIn: "/signin",
+    //   error: "/error",
+    // },
   };
 });
