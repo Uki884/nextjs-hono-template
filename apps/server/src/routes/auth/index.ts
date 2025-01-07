@@ -5,4 +5,4 @@ import { signUpRoute } from "./signUp.route";
 
 export const authRoutes = new Hono()
   .route("/signUp", signUpRoute)
-  .route('/authUser', authUserRoute);
+  .route("/authUser", authUserRoute);

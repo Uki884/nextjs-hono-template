@@ -5,7 +5,10 @@ import { env } from "hono/adapter";
 import { z } from "zod";
 import { prismaClient } from "../lib/prisma/client";
 
-const parseCredentials = ({ email, password }: { email: unknown, password: unknown }) => {
+const parseCredentials = ({
+  email,
+  password,
+}: { email: unknown; password: unknown }) => {
   const credentialsSchema = z.object({
     email: z.string(),
     password: z.string(),
@@ -39,14 +42,18 @@ export const authMiddleware = initAuthConfig((c) => {
             where: { email: credentials.email },
           });
 
-          if (!user || !user.hashedPassword || !bcryptjs.compareSync(credentials.password, user.hashedPassword)) {
+          if (
+            !user ||
+            !user.hashedPassword ||
+            !bcryptjs.compareSync(credentials.password, user.hashedPassword)
+          ) {
             throw new Error("Invalid Credentials");
           }
 
           return {
             ...user,
             hashedPassword: undefined,
-          }
+          };
         },
       }),
     ],

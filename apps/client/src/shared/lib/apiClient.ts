@@ -10,10 +10,12 @@ export const apiClient = hcWithType(
   {
     async fetch(input, requestInit, Env, executionCtx) {
       // MEMO: https://github.com/honojs/middleware/issues/483
-			return fetch(input, {
-				...requestInit,
-				...(typeof window === "undefined" ? await (await import('next/headers')).headers() : {}),
-			});
+      return fetch(input, {
+        ...requestInit,
+        ...(typeof window === "undefined"
+          ? await (await import("next/headers")).headers()
+          : {}),
+      });
     },
   },
 );

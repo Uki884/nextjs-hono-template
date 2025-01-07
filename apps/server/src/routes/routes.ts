@@ -9,7 +9,10 @@ export const app = new Hono();
 
 app.use("*", authMiddleware);
 
-app.use("/api/auth/*", except(["/api/auth/signUp", "/api/auth/authUser"], authHandler()));
+app.use(
+  "/api/auth/*",
+  except(["/api/auth/signUp", "/api/auth/authUser"], authHandler()),
+);
 
 app.use("/api/*", except(["/api/auth/signUp"], verifyAuth()));
 
