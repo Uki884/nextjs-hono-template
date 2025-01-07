@@ -7,13 +7,11 @@ import { exampleRoutes } from "./example";
 
 export const app = new Hono();
 
-const exceptRoutes = ["/api/auth/signUp"];
-
 app.use("*", authMiddleware);
 
-app.use("/api/auth/*", except(exceptRoutes, authHandler()));
+app.use("/api/auth/*", except(["/api/auth/signUp", "/api/auth/authUser"], authHandler()));
 
-app.use("/api/*", except(exceptRoutes, verifyAuth()));
+app.use("/api/*", except(["/api/auth/signUp"], verifyAuth()));
 
 export const apiRoutes = app
   .basePath("/api")

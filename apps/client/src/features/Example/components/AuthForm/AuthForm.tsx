@@ -12,6 +12,11 @@ export const AuthForm = () => {
     password: "",
   });
 
+  const [signInForm, setSignInForm] = useState({
+    email: "",
+    password: "",
+  });
+
   const handleSignUp = async () => {
     const { name, email, password } = signUpForm;
     const result = await signUpAction({ name, email, password });
@@ -20,8 +25,8 @@ export const AuthForm = () => {
 
   const handleSignIn = async () => {
     const result = await signIn("credentials", {
-      username: "admin",
-      password: "admin",
+      email: signInForm.email,
+      password: signInForm.password,
     });
     console.log("handleSignIn result", result);
   };
@@ -45,8 +50,20 @@ export const AuthForm = () => {
           handleSignIn();
         }}
       >
-        <input type="email" />
-        <input type="password" />
+        <input
+          type="email"
+          value={signInForm.email}
+          onChange={(e) =>
+            setSignInForm({ ...signInForm, email: e.target.value })
+          }
+        />
+        <input
+          type="password"
+          value={signInForm.password}
+          onChange={(e) =>
+            setSignInForm({ ...signInForm, password: e.target.value })
+          }
+        />
         <button type="submit">Submit</button>
       </form>
       <h1>SignUp Form</h1>

@@ -1,7 +1,14 @@
-import { getExamples } from "../../server/getExamples";
+import { getSession } from "../../server/getSession";
 
 export const ExampleList = async () => {
-  const data = await getExamples();
+  const session = await getSession();
 
-  return <div>{JSON.stringify(data)}</div>;
+  console.log("session", session);
+
+  return (
+    <div>
+      UserName: {session?.user?.name}
+      UserEmail: {session?.user?.email}
+    </div>
+  );
 };
