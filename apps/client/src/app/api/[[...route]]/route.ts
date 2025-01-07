@@ -1,7 +1,7 @@
-import { app, handle } from "@app/server";
+import { apiRoutes, handle } from "@app/server";
 
-export const GET = handle(app);
-export const POST = handle(app);
-export const PUT = handle(app);
-export const DELETE = handle(app);
-export const PATCH = handle(app);
+export const GET = handle(apiRoutes);
+export const POST = handle(apiRoutes);
+export const PUT = handle(apiRoutes);
+export const DELETE = handle(apiRoutes);
+export const PATCH = handle(apiRoutes);
