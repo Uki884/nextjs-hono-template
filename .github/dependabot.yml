@@ -4,7 +4,6 @@
 # https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 
 version: 2
-registries:
 updates:
   - package-ecosystem: "npm"
     open-pull-requests-limit: 5 # 作成するPRの最大数を5に設定
