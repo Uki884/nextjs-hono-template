@@ -68,7 +68,7 @@ importers:
         version: 2.7.4(@prisma/client@6.1.0(prisma@6.1.0))
       '@hono/auth-js':
         specifier: 1.0.15
-        version: 1.0.15(@auth/core@0.37.4)(hono@4.6.14)(react@19.0.0)
+        version: 1.0.15(@auth/core@0.37.4)(hono@4.6.16)(react@19.0.0)
       '@prisma/client':
         specifier: 6.1.0
         version: 6.1.0(prisma@6.1.0)
@@ -76,12 +76,12 @@ importers:
         specifier: 2.4.3
         version: 2.4.3
       hono:
-        specifier: 4.6.14
-        version: 4.6.14
+        specifier: 4.6.16
+        version: 4.6.16
     devDependencies:
       '@hono/zod-validator':
         specifier: 0.4.2
-        version: 0.4.2(hono@4.6.14)(zod@3.24.1)
+        version: 0.4.2(hono@4.6.16)(zod@3.24.1)
       '@types/bcryptjs':
         specifier: 2.4.6
         version: 2.4.6
@@ -584,8 +584,8 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
-  hono@4.6.14:
-    resolution: {integrity: sha512-j4VkyUp2xazGJ8eCCLN1Vm/bxdvm/j5ZuU9AIjLu9vapn2M44p9L3Ktr9Vnb2RN2QtcR/wVjZVMlT5k7GJQgPw==}
+  hono@4.6.16:
+    resolution: {integrity: sha512-iE6xOPwDYlfnZFwk6BfIMMIH4WZm3pPhz6rc1uJM/OPew0pjG5K6p8WTLaMBY1/szF/T0TaEjprMpwn16BA0NQ==}
     engines: {node: '>=16.9.0'}
 
   icss-utils@5.1.0:
@@ -1065,15 +1065,15 @@ snapshots:
     dependencies:
       resolve: 1.22.9
 
-  '@hono/auth-js@1.0.15(@auth/core@0.37.4)(hono@4.6.14)(react@19.0.0)':
+  '@hono/auth-js@1.0.15(@auth/core@0.37.4)(hono@4.6.16)(react@19.0.0)':
     dependencies:
       '@auth/core': 0.37.4
-      hono: 4.6.14
+      hono: 4.6.16
       react: 19.0.0
 
-  '@hono/zod-validator@0.4.2(hono@4.6.14)(zod@3.24.1)':
+  '@hono/zod-validator@0.4.2(hono@4.6.16)(zod@3.24.1)':
     dependencies:
-      hono: 4.6.14
+      hono: 4.6.16
       zod: 3.24.1
 
   '@img/sharp-darwin-arm64@0.33.5':
@@ -1415,7 +1415,7 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
-  hono@4.6.14: {}
+  hono@4.6.16: {}
 
   icss-utils@5.1.0(postcss@8.4.49):
     dependencies:
