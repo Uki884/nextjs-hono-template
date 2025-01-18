@@ -6,6 +6,7 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
+    directory: "/"
     open-pull-requests-limit: 5 # 作成するPRの最大数を5に設定
     schedule:
       interval: "weekly"
